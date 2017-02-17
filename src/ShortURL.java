@@ -3,6 +3,7 @@ import java.util.HashMap;
 
 public class ShortURL {
 	String key="";
+	String reply;
 	int i = 48;
 	HashMap map = new HashMap<String, String>(62);
 	
@@ -43,12 +44,15 @@ public class ShortURL {
 			
 		if (!shortURL.isEmpty()) {
 			if (shortURL.matches("[A-za-z0-9]"))
-				return map.get(shortURL).toString();
+				reply = map.get(shortURL).toString();
 			
 			else
-				return "Enter a single-digit alphanumeric key";
+				reply = "Enter a single-digit alphanumeric key";
 		}
 		
-		return "Key should not be empty";
+		else
+			reply = "Key should not be empty";
+		
+		return reply;
 	}
 }
